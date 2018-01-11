@@ -1,0 +1,25 @@
+<%- include ./_header.ejs %>
+
+
+<h1>Welcome to Addis City Mapper!</h1>
+
+
+<% users.forEach(function(user) { %>
+<div class="panel panel-default">
+<div class="panel-heading">
+<a href="/users/<%= user.username %>">
+<%= user.name() %>
+</a>
+</div>
+<% if (user.savedRoutes) { %>
+<div class="panel-body"><%= user.savedRoutes %></div>
+<% } %>
+</div>
+<% }) %>
+
+<iframe src="https://embed.waze.com/iframe?
+  zoom=12&lat=45.6906304&lon=-120.810983&desc=1"
+  width="300" height="400"></iframe>
+
+
+<%- include ./_footer.ejs %>

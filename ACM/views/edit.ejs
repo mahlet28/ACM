@@ -1,0 +1,16 @@
+<%- include ./_header.ejs %>
+
+<h1>Edit your profile</h1>
+
+<form action="/edit" method="post">
+	<input name="username" type="text" class="form-control"
+	  placeholder="User name"
+	  value="<%= currentUser.username || "" %>">
+	<textarea name="savedRoutes" class="form-control"
+	  placeholder="Tell us about your routes!">
+	  <%= currentUser.savedRoutes || "" %></textarea>
+	<input type="submit" value="Update" class="btn
+	  btn-primary btn-block">
+</form>
+
+<%- include ./_footer.ejs %>
